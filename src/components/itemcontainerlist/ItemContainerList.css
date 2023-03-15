@@ -1,0 +1,11 @@
+.itemContainer {
+    margin-top: 150px;
+    align-items: center;
+}
+
+p {
+    font-style: italic;
+    font-size: 35px;
+    color: black;
+    text-align: center;
+}
