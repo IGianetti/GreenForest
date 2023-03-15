@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import {AppBar, Grid, Tab, Tabs, Toolbar, Typography} from "@mui/material"
-import Badge from '@mui/material/Badge';
-import MailIcon from '@mui/icons-material/Mail';
-import IconButton from '@mui/material/IconButton';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import CartWidget from "../cartwidget/CartWidget";
+
 
 const NavBar = ({links}) => {
 
@@ -31,14 +29,8 @@ const NavBar = ({links}) => {
                     </Tabs>
                 </Grid>
 
-                <Grid display="flex" item xs={2}>
-
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                    <ShoppingCartCheckoutIcon/>
-                    </Badge>
-                </IconButton>
-                                 
+                <Grid display="flex" item xs={2}>               
+                    <CartWidget/>             
                 </Grid>
             </Grid>
             
