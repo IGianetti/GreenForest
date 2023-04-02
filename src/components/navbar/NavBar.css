@@ -1,19 +1,14 @@
-.color1 {
-    color: #044620;
+.logoNavBar {
+    width: 120px;
+    height: 100px;
 }
 
-.color2 {
-    color: #475f34;
+.css-68a0qr-MuiButtonBase-root-MuiTab-root {
+
+    font-size: 1.2rem !important;
 }
 
-.color3 {
-    color: #838561;
-}
-
-.color4 {
-    color: #b8ae98;
-}
-
-.color5 {
-    color: #dacfc5;
+.link {
+    color: antiquewhite;
+    font-size: 1.2rem
 }
