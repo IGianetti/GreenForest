@@ -14,8 +14,8 @@ const ItemContainerList = () => {
   },[])
   
   return (
-    <div  className='itemContainer' >
-     
+    <div><p>BIENVENIDOS A GREENFOREST</p>
+    <div className='itemContainer' >
       {users.map((user)=>{
         return(
           <div key={user.id}>
@@ -25,7 +25,7 @@ const ItemContainerList = () => {
           </div>
         )
       })}
-     
+      </div> 
     </div>
   )
 }

@@ -24,10 +24,11 @@ const App = () => {
       <NavBar/> 
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/services' element={<Services/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/item-details/:id' element={<ItemDetailsContainer/>}/> 
+        <Route path='/item-details/:id' element={<ItemDetailsContainer/>}/>
+        <Route path='/category/services' element={<Services/>}/>
+        <Route path='/category/services/:id' element={<Services/>}/>
         <Route path='/cartshop' element={<CartShop/>}/> 
+        <Route path='/contact' element={<Contact/>}/>
       </Routes>
       
       <Footer/>    

@@ -27,7 +27,7 @@ const NavBar = () => {
                 <Grid display="flex" item xs={6}>
                     <Tabs>
                         <Link className="link" to='/'><Tab value='0' label='Inicio' sx={{ marginLeft: 1, marginRight: 1  }}>0</Tab></Link>
-                        <Link className="link" to='/services'><Tab value='1' label='Servicios' sx={{ marginLeft: 1, marginRight: 1  }}>1</Tab></Link>
+                        <Link className="link" to='/category/services'><Tab value='1' label='Servicios' sx={{ marginLeft: 1, marginRight: 1  }}>1</Tab></Link>
                         <Link className="link" to='/contact'><Tab value='2' label='Contacto' sx={{ marginLeft: 1, marginRight: 1  }}>2</Tab></Link>
                      </Tabs>
                 </Grid>
