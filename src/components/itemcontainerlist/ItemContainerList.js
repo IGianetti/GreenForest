@@ -1,26 +1,50 @@
+// REACT
 import React, { useState, useEffect } from 'react'
-import "./ItemContainerList.css"
 import { Link } from 'react-router-dom'
+
+// CSS
+import "./ItemContainerList.css"
+
+// COMPONENTES
 import CardProduct from '../cardproduct/CardProduct'
-import axios from 'axios'
+
+// FIREBASE
+import { collection, query, getDocs } from "firebase/firestore"
+import { db } from '../../firebase/firebaseConfig'
+
+
 
 
 const ItemContainerList = () => {
-  const [users, setUsers] = useState([]);
+  const [items, setItemsData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.github.com/users')
-    .then(res =>setUsers(res.data))
+    const getItems = async () => {
+      const q = query(collection(db, "productos"));
+      const docs = [];
+      const querySnapshot = await getDocs(q); 
+      console.log('DATA:', querySnapshot);
+      querySnapshot.forEach((doc) => {
+        console.log('DATA:', doc.data(), 'ID:', doc.id);
+        docs.push({ ...doc.data(), id: doc.id });
+        
+      });      
+      setItemsData(docs);
+    };
+
+    getItems()
   },[])
   
   return (
-    <div><p>BIENVENIDOS A GREENFOREST</p>
+    <div className='itemContainerList'>
     <div className='itemContainer' >
-      {users.map((user)=>{
+      {items.map((data)=>{
         return(
-          <div key={user.id}>
-          <Link to={`/item-details/${user.login}`}>
-          <CardProduct  data={user}/>
+          <div key={data.id}>
+          <Link style={{ textDecoration: "none" }} 
+                key={data.id}
+                to={`/item-details/${data.id}`}>
+          <CardProduct itemData={data} />
           </Link>
           </div>
         )

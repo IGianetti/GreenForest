@@ -4,26 +4,25 @@ import './CardProduct.css'
 
 
 
-const CardProduct = ({ data }) => {
+const CardProduct = ( { itemData }) => {
   
  
     return ( 
        
-       <Card >
+       <Card sx={{ maxWidth: 320, m: 4 }}>
       <CardActionArea>
         <CardMedia
           component="img"          
-          image={`${data.avatar_url}`}
+          image={itemData.img}
           alt="image product"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {data.login}
+            {itemData.nombre}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {data.html_url}
+            $ {itemData.precio} | stock: {itemData.stock}
           </Typography>
-         
         </CardContent>
       </CardActionArea>
     </Card>

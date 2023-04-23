@@ -1,0 +1,10 @@
+.header-container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    width: 100%;
+    background: rgb(4, 70, 32);
+    background: linear-gradient(90deg, rgba(4, 70, 32, 1) 0%, rgba(71, 95, 52, 1) 37%, rgba(131, 133, 97, 1) 66%, rgba(184, 174, 152, 1) 90%);
+
+}
