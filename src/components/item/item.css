@@ -41,13 +41,16 @@
 
 .box .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 15px;
 }
 
 .box .row h2 {
+
     text-transform: uppercase;
     letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 15px 0;
 }
 
 .box .row span {

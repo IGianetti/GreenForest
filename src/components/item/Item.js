@@ -4,7 +4,7 @@ import ItemCount from '../itemCount/ItemCount'
 import './item.css'
 
 
-const Item = ({ data }) => {
+const Item = ({ itemData }) => {
 
     const onAdd = (quantity) =>{
         console.log(`Compraste  ${quantity} unidades`)
@@ -14,18 +14,17 @@ const Item = ({ data }) => {
   <div className='container'>
     <div className='details'>
         <div className='big-img'>
-            <img src={`${data.avatar_url}`} alt='img product'/>
+            <img src={`${itemData.img}`} alt='img product'/>
         </div>
 
         <div className='box'>
             <div className='row'>
-                <h2>{data.name}</h2>
-                <span>$ 500</span>                
+                <h2>{itemData.nombre}</h2>                             
             </div>
-            <p>Alias: {data.login}</p>
-            <p>Repo: {data.html_url}</p>
-            <p>Localidad: {data.location}</p>
-            <ItemCount initial= {1} stock={20} onAdd={onAdd}/>            
+            <p>Precio: ${itemData.precio}</p>
+            <p>Descripcion: {itemData.descp}</p>
+            <p>Categoria: {itemData.cat}</p>
+            <ItemCount initial= {1} stock={itemData.stock} onAdd={onAdd}/>            
         </div>        
     </div>
   </div>    

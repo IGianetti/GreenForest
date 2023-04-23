@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // FIRBASE - FIRESTORE
 import { collection, query, getDocs, where } from "firebase/firestore";
@@ -18,22 +18,30 @@ const ItemCategory = () => {
           const q = query(collection(db, "productos"), where("cat", "==", cat));
           const docs = [];
           const querySnapshot = await getDocs(q);
-           console.log('DATA:', querySnapshot);
+           
           querySnapshot.forEach((doc) => {
-            console.log('DATA:', doc.data(), 'ID:', doc.id);
+            
             docs.push({ ...doc.data(), id: doc.id });
           });
-           console.log(docs);
+           
           setItemData(docs);
         };
         getItems();
       }, [cat]);
 
   return (
-    <div className="items-container">
+    <div className="items-container">        
+        {itemData.map((data) => {          
+        return <div key={data.id}>
+          <Link style={{ textDecoration: "none" }}
+                key={data.id}
+                to={`/item-details/${data.id}`}
+          >
+            <CardProduct itemData={data}  />;
+          </Link>
+        </div>
         
-        {itemData.map((data) => {
-        return <CardProduct itemData={data} key={data.id} />;
+        
       })}
     </div>
   )
