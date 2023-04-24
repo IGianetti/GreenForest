@@ -1,5 +1,10 @@
+/****** REACT ******/
 import * as React from 'react';
+
+/****** MATERIAL UI ******/
 import { Card, CardContent, CardMedia, Typography, CardActionArea} from '@mui/material';
+
+/****** CSS ******/
 import './CardProduct.css'
 
 

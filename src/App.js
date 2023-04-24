@@ -1,9 +1,11 @@
 import './App.css';
 //REACT ROUTER DOM
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// CONTEXT
+import  CartContextProvider  from './context/CartContext';
 // COMPONENT
 import NavBar from './components/navbar/NavBar';
-
 import Footer from './components/footer/Footer';
 
 //PAGES
@@ -22,6 +24,7 @@ import ItemCategory from './pages/ItemCategory/ItemCategory';
 
 const App = () => {
   return (
+    <CartContextProvider>
     <Router>
     <div className="App">
       <HeaderLogo/>
@@ -37,6 +40,7 @@ const App = () => {
       <Footer/>    
     </div>
     </Router>
+    </CartContextProvider>
   );
 }
 
