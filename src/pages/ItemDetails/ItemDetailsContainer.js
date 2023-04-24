@@ -3,45 +3,44 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 /****** FIREBASE******/
-import {collection, query, getDocs, where, documentId,} from "firebase/firestore";
+import { collection, query, getDocs, where, documentId, } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
 /****** COMPONENTE ******/
 import Item from '../../components/item/Item'
 
-/****** CSS ******/
-import './itemDetails.css'
+
 
 const ItemDetailsContainer = () => {
   const [itemData, setItemData] = useState([]);
 
   let { id } = useParams();
-  
-  
 
-  useEffect(() => {  
+
+
+  useEffect(() => {
     const getItems = async () => {
       const q = query(collection(db, "productos"), where(documentId(), "==", id));
-      
+
       const docs = [];
-      const querySnapshot = await getDocs(q);      
-       
+      const querySnapshot = await getDocs(q);
+
       querySnapshot.forEach((doc) => {
-         
+
         docs.push({ ...doc.data(), id: doc.id });
       });
-       ;
+      ;
       setItemData(docs);
     };
-    getItems();    
-  },[id])
+    getItems();
+  }, [id])
 
   return (
     <div className='item__details'>
-        {itemData.map((data) => {
-      return <Item itemData={data} key={data.id}/>
-    })}
-    
+      {itemData.map((data) => {
+        return <Item itemData={data} key={data.id} />
+      })}
+
     </div>
   )
 }

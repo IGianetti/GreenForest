@@ -6,49 +6,44 @@ const CartContextProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
-    const totalProducts = () => { 
-      
-        return cart.length+1 
-    }
+    //cart.reduce((counter, item) => (counter + item.precio) * item.quantity, 0)
 
-    const totalPurchase = () =>{
-        
-        return cart.reduce ((counter, product)=> counter + product.price * product.quantity, 0)
+    const totalPurchase = () => {
+        console.log('Se supone que es la suma total')
+        const res = cart.reduce((cont, item) => { return cont + item.precio * item.qantity }, 0)
+
+        return res
     }
 
     const addItem = (item) => {
-        //console.log('Estoy en Additem', item)
-        
         setCart([...cart, item]);
-        console.log('Estoy en Additem', cart)
     }
 
-    const removeItem = (itemId) => {        
+    const removeItem = (itemId) => {
         setCart(cart.filter(post => post.id !== itemId));
     }
 
-    const clearCart = () => {        
+    const clearCart = () => {
         setCart([]);
     }
 
-    const isInCart = (itemid) => { 
-        console.log('Eso ya esta en el carrito peach')       
+    const isInCart = (itemid) => {
         return cart.some(post => post.id === itemid)
     }
 
 
-    console.log('Carrito',cart);
+    console.log('Carrito', cart);
     console.log('Largo del Carrito', cart.length);
+    console.log(totalPurchase())
 
-    return(
-        <CartContext.Provider value = {{
+    return (
+        <CartContext.Provider value={{
             cart,
             addItem,
             removeItem,
             isInCart,
             clearCart,
             totalPurchase,
-            totalProducts,
         }}>
             {children}
         </CartContext.Provider>
