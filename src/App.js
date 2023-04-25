@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // CONTEXT
-import  CartContextProvider  from './context/CartContext';
+import CartContextProvider from './context/CartContext';
 // COMPONENT
 import NavBar from './components/navbar/NavBar';
 import Footer from './components/footer/Footer';
@@ -17,6 +17,7 @@ import ItemDetailsContainer from './pages/ItemDetails/ItemDetailsContainer';
 import HeaderLogo from './components/header/HeaderLogo';
 
 import ItemCategory from './pages/ItemCategory/ItemCategory';
+import Checkout from './components/checkout/Checkout';
 
 
 //<Route path='/categories/:cat' element={<Categories/>}/>
@@ -25,21 +26,22 @@ import ItemCategory from './pages/ItemCategory/ItemCategory';
 const App = () => {
   return (
     <CartContextProvider>
-    <Router>
-    <div className="App">
-      <HeaderLogo/>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>        
-        <Route path='/cartshop' element={<CartShop/>}/> 
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/item-details/:id' element={<ItemDetailsContainer/>}/> 
-        <Route path='/categories/:cat' element={<ItemCategory/>}/>
-      </Routes>
-      
-      <Footer/>    
-    </div>
-    </Router>
+      <Router>
+        <div className="App">
+          <HeaderLogo />
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/cartshop' element={<CartShop />} />
+            <Route path='/checkout' element={<Checkout />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/item-details/:id' element={<ItemDetailsContainer />} />
+            <Route path='/categories/:cat' element={<ItemCategory />} />
+          </Routes>
+
+          <Footer />
+        </div>
+      </Router>
     </CartContextProvider>
   );
 }

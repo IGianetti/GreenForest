@@ -1,12 +1,13 @@
 .MuiCardActions-root {
-    display: flex-end;
-    padding: 8px;
-    justify-content: end;
-    margin: 15px;
+  display: flex-end;
+  padding: 15px;
+  justify-content: end;
+  margin: 20px;
 }
 
 .css-1i7y3wo-MuiPaper-root-MuiCard-root.css-1i7y3wo-MuiPaper-root-MuiCard-root {
-    margin: 15px !important;
-    border-radius: 15px !important;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
+  margin: 20px !important;
+  border-radius: 15px !important;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
 }

@@ -1,5 +1,7 @@
 .items-container {
-    display: flex;
-    align-items: center;
-    justify-content: center
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  padding: 25px;
 }

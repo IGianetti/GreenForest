@@ -10,38 +10,38 @@ import CardProduct from "../../components/cardproduct/CardProduct";
 import './ItemCategory.css'
 
 const ItemCategory = () => {
-    const [itemData, setItemData] = useState([]);
-    let { cat } = useParams();
+  const [itemData, setItemData] = useState([]);
+  let { cat } = useParams();
 
-    useEffect(() => {
-        const getItems = async () => {
-          const q = query(collection(db, "productos"), where("cat", "==", cat));
-          const docs = [];
-          const querySnapshot = await getDocs(q);
-           
-          querySnapshot.forEach((doc) => {
-            
-            docs.push({ ...doc.data(), id: doc.id });
-          });
-           
-          setItemData(docs);
-        };
-        getItems();
-      }, [cat]);
+  useEffect(() => {
+    const getItems = async () => {
+      const q = query(collection(db, "productos"), where("cat", "==", cat));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+
+      setItemData(docs);
+    };
+    getItems();
+  }, [cat]);
 
   return (
-    <div className="items-container">        
-        {itemData.map((data) => {          
+    <div className="items-container">
+      {itemData.map((data) => {
         return <div key={data.id}>
           <Link style={{ textDecoration: "none" }}
-                key={data.id}
-                to={`/item-details/${data.id}`}
+            key={data.id}
+            to={`/item-details/${data.id}`}
           >
-            <CardProduct itemData={data}  />;
+            <CardProduct itemData={data} />
           </Link>
         </div>
-        
-        
+
+
       })}
     </div>
   )

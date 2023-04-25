@@ -36,7 +36,10 @@ const ItemDetailsContainer = () => {
   }, [id])
 
   return (
-    <div className='item__details'>
+    <div className='item__details' style={{
+      backgroundColor: 'antiquewhite',
+      padding: '25px'
+    }}>
       {itemData.map((data) => {
         return <Item itemData={data} key={data.id} />
       })}
