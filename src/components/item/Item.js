@@ -73,8 +73,6 @@ const Item = ({ itemData }) => {
                 </p>
             </div>
         </div>
-
-
     );
 };
 

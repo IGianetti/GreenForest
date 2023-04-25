@@ -7,7 +7,7 @@ import { db } from "../../firebase/firebaseConfig";
 
 import CardProduct from "../../components/cardproduct/CardProduct";
 
-import './ItemCategory.css'
+import "./ItemCategory.css";
 
 const ItemCategory = () => {
   const [itemData, setItemData] = useState([]);
@@ -20,7 +20,6 @@ const ItemCategory = () => {
       const querySnapshot = await getDocs(q);
 
       querySnapshot.forEach((doc) => {
-
         docs.push({ ...doc.data(), id: doc.id });
       });
 
@@ -32,19 +31,20 @@ const ItemCategory = () => {
   return (
     <div className="items-container">
       {itemData.map((data) => {
-        return <div key={data.id}>
-          <Link style={{ textDecoration: "none" }}
-            key={data.id}
-            to={`/item-details/${data.id}`}
-          >
-            <CardProduct itemData={data} />
-          </Link>
-        </div>
-
-
+        return (
+          <div key={data.id}>
+            <Link
+              style={{ textDecoration: "none" }}
+              key={data.id}
+              to={`/item-details/${data.id}`}
+            >
+              <CardProduct itemData={data} />
+            </Link>
+          </div>
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default ItemCategory
+export default ItemCategory;

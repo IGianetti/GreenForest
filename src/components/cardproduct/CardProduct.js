@@ -1,26 +1,23 @@
 /****** REACT ******/
-import * as React from 'react';
+import * as React from "react";
 
 /****** MATERIAL UI ******/
-import { Card, CardContent, CardMedia, Typography, CardActionArea} from '@mui/material';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+} from "@mui/material";
 
 /****** CSS ******/
-import './CardProduct.css'
+import "./CardProduct.css";
 
-
-
-const CardProduct = ( { itemData }) => {
-  
- 
-    return ( 
-       
-       <Card sx={{ maxWidth: 320, m: 4 }}>
+const CardProduct = ({ itemData }) => {
+  return (
+    <Card sx={{ maxWidth: 320, m: 4 }}>
       <CardActionArea>
-        <CardMedia
-          component="img"          
-          image={itemData.img}
-          alt="image product"
-        />
+        <CardMedia component="img" image={itemData.img} alt="image product" />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {itemData.nombre}
@@ -31,15 +28,7 @@ const CardProduct = ( { itemData }) => {
         </CardContent>
       </CardActionArea>
     </Card>
-  
-      );
-}
+  );
+};
 
-export default CardProduct
-
-
-
-
-
-
-
+export default CardProduct;

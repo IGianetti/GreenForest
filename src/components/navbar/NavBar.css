@@ -1,18 +1,18 @@
 .NavigationBar {
-    display: flex;
-    width: 100%;
-    background-color: #353535;
+  display: flex;
+  width: 100%;
+  background-color: rgb(35, 35, 35);
 }
 
 .navbarContainer {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
-
-.link {
-    color: antiquewhite;
-    font-size: 1.2rem;
-    text-decoration: none;
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  color: antiquewhite !important;
+  font-size: 1.2rem !important;
+  text-decoration: none !important;
+  text-transform: none !important;
 }
