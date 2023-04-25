@@ -1,17 +1,30 @@
 # Greeen Forest
 
-> E-commerce for outdoor products.
+> E-commerce de productos outdoor y aventura.
 
-## Table of Contents
+## Informacion General
 
-- [Dependencies Used](#dependencies-used)
+Es un proyecto de e-commerce para curso react, en el mismo se aplican los conceptos aprendido durante las clases.
+Algunos de estos conceptos son:
+
+- react-router-dom
+- tecnicas de rendering
+- componentes funcionales
+- manejo de estados
+
+## Project Status
+
+Status: _completo_
+En un futuro cercano se retomara el proyecto para escalarlo aun mas.
+
+## Contenios
+
+- [Dependencias Usadas](#dependencias-usadas)
 - [Screenshots](#screenshots)
 - [Setup](#setup)
-- [Usage](#usage)
 - [Project Status](#project-status)
-- [Contact](#contact)
 
-## Dependencies Used
+## Dependencias Usadas
 
 - React - version 18.2.0
 - react-router-dom - version 6.10.0"
@@ -37,40 +50,25 @@
 
 ## Setup
 
-Install dependencies and create node_modules folder
+Para instalar las dependencias requeridas para el proyecto, usa:
 
 ```
 npm install
 ```
 
-### Compiles for development
+### Compila
 
-In the project directory, you can run:
+En el directorio del proyecto para levantarlo usa:
 
 ```
 npm start
 ```
 
-Runs the app in the development mode.
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.
-
-## Project Status
-
-Project is: _complete_
-may in the near future I will resume the project to improve it
-
 ## Room for Improvement
 
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
+El proyecto esta en una estadio temprano, por lo que tiene margen de mejora. Algunas de ellas son:
 
-Room for improvement:
-
-- Implement payment api
-
-To do:
-
-- Fixes in css
-- Work color palette
-- Add login and registration
+- Implementar Api de pago.
+- Arreglos en el css.
+- Trabajar mas la paleta de colores.
+- Agregar un loggin y registracion de usuarios.

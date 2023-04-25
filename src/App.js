@@ -16,6 +16,7 @@ import CartShop from "./pages/CartShop/CartShop";
 import ItemDetailsContainer from "./pages/ItemDetails/ItemDetailsContainer";
 import ItemCategory from "./pages/ItemCategory/ItemCategory";
 import About from "./pages/About/About";
+import ErrorPage from "./pages/Error/ErrorPage";
 
 //CSS
 import "./App.css";
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/cartshop" element={<CartShop />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<ErrorPage />} />
             <Route
               path="/item-details/:id"
               element={<ItemDetailsContainer />}

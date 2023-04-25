@@ -1,0 +1,9 @@
+.error-container {
+  min-height: 100vh;
+  background-color: antiquewhite;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

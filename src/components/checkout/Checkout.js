@@ -20,16 +20,19 @@ const initialState = {
   lastName: "",
   email: "",
   email2: "",
+  ciudad: "",
 };
 
 const Checkout = () => {
   const { cart, totalPurchase, clearCart } = useContext(CartContext);
   const [values, setValues] = useState(initialState);
+  const [equals, setEquals] = useState(false);
   const [orderId, setOrderId] = useState("");
 
   const onChange = (e) => {
     const { value, name } = e.target;
     setValues({ ...values, [name]: value });
+    validateMail();
   };
 
   const onSubmit = async (e) => {
@@ -46,9 +49,18 @@ const Checkout = () => {
     });
 
     setOrderId(docRef.id);
-
     setValues(initialState);
     clearCart();
+  };
+
+  const validateMail = () => {
+    if (values.email && values.email2 !== "") {
+      if (values.email === values.email2) {
+        setEquals(true);
+      } else {
+        setEquals(false);
+      }
+    }
   };
 
   return (
@@ -63,6 +75,7 @@ const Checkout = () => {
               type="text"
               variant="outlined"
               placeholder="Nombre"
+              required
               style={{ margin: 10, width: 400 }}
               name="name"
               value={values.name}
@@ -74,6 +87,7 @@ const Checkout = () => {
               type="text"
               variant="outlined"
               placeholder="Apellio"
+              required
               style={{ margin: 10, width: 400 }}
               name="lastName"
               value={values.lastName}
@@ -85,6 +99,7 @@ const Checkout = () => {
               type="email"
               variant="outlined"
               placeholder="Email"
+              required
               style={{ margin: 10, width: 400 }}
               name="email"
               value={values.email}
@@ -101,13 +116,27 @@ const Checkout = () => {
               value={values.email2}
               onChange={onChange}
             />
-            {values.email === values.email2 ? (
-              <Button variant="contained" color="success" type="submit">
-                Finalizar compra
-              </Button>
-            ) : (
-              <p>Valida el mail para seguir</p>
-            )}
+            <TextField
+              id="city"
+              label="Ciudad"
+              type="text"
+              variant="outlined"
+              placeholder="Ciudad"
+              required
+              style={{ margin: 10, width: 400 }}
+              name="ciudad"
+              value={values.ciudad}
+              onChange={onChange}
+            />
+            <>
+              {equals ? (
+                <Button variant="contained" color="success" type="submit">
+                  Finalizar compra
+                </Button>
+              ) : (
+                <p>Valida Email</p>
+              )}
+            </>
           </form>
         </div>
       ) : (
