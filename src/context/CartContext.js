@@ -9,7 +9,7 @@ const CartContextProvider = ({ children }) => {
     //cart.reduce((counter, item) => (counter + item.precio) * item.quantity, 0)
 
     const totalPurchase = () => {
-        console.log('Se supone que es la suma total')
+
         const res = cart.reduce((cont, item) => { return cont + item.precio * item.qantity }, 0)
 
         return res
@@ -32,9 +32,7 @@ const CartContextProvider = ({ children }) => {
     }
 
 
-    console.log('Carrito', cart);
-    console.log('Largo del Carrito', cart.length);
-    console.log(totalPurchase())
+
 
     return (
         <CartContext.Provider value={{
